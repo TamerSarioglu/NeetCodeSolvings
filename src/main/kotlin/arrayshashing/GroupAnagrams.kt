@@ -1,4 +1,4 @@
-package com.sarioglutamer.groupanagrams
+package com.sarioglutamer.arrayshashing
 
 fun main() {
 
@@ -11,9 +11,9 @@ fun main() {
 fun groupAnagrams(strs: Array<String>): List<List<String>> {
     val anagramGroups = mutableMapOf<String, MutableList<String>>()
 
-    for (str in strs) {
-        val sortedStr = str.toCharArray().sorted().toString()
-        anagramGroups.getOrPut(sortedStr) { mutableListOf() }.add(str)
+    for (i in strs) {
+        val sortedStr = i.toCharArray().sorted().toString()
+        anagramGroups.getOrPut(sortedStr) { mutableListOf() }.add(i)
     }
 
     return anagramGroups.values.toList()
